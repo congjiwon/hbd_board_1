@@ -11,13 +11,13 @@ const AuthMain: React.FC = () => {
 
   const handleGoToLogin = () => {
     alert("TODO 요구사항에 맞추어 기능을 완성해주세요.");
-
+    setIsLogin(true);
     // TODO: 선택 시, LoginForm이 보이도록 제어
   };
 
   const handleGoToSignup = () => {
     alert("TODO 요구사항에 맞추어 기능을 완성해주세요.");
-
+    setIsLogin(false);
     // TODO: 선택 시, SignupForm이 보이도록 제어
   };
 
@@ -32,7 +32,7 @@ const AuthMain: React.FC = () => {
       >
         <div>
           <Logo>HBD</Logo>
-          {isLogin ? <LoginForm /> : <SignupForm />}
+          {isLogin ? <LoginForm /> : <SignupForm setIsLogin={setIsLogin} />}
           <Button
             type="link"
             onClick={isLogin ? handleGoToSignup : handleGoToLogin}
